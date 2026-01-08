@@ -10,7 +10,7 @@ interface PreviewState {
 export default function AdminSection() {
     const [preview, setPreview] = useState<PreviewState | null>(null);
     const [imgError, setImgError] = useState<boolean>(false);
-    const adminPreviewSrc = "/assets/admin-login-preview.png";
+    const adminPreviewSrc = `${import.meta.env.BASE_URL}assets/admin-login-preview.png`;
 
     useEffect(() => {
         const onKeyDown = (event: KeyboardEvent) => {

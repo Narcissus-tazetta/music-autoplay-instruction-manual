@@ -10,6 +10,7 @@ interface PreviewState {
 export default function SystemExtensionSection() {
     const [preview, setPreview] = useState<PreviewState | null>(null);
     const [imgError, setImgError] = useState<boolean>(false);
+    const assetBaseUrl = `${import.meta.env.BASE_URL}assets/`;
 
     useEffect(() => {
         const onKeyDown = (event: KeyboardEvent) => {
@@ -52,7 +53,7 @@ export default function SystemExtensionSection() {
                             type="button"
                             onClick={() => {
                                 setImgError(false);
-                                setPreview({ title: "完全自動遷移", src: "/assets/next-video.gif" });
+                                setPreview({ title: "完全自動遷移", src: `${assetBaseUrl}next-video.gif` });
                             }}
                             className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
                             aria-label="完全自動遷移のプレビューを開く"
@@ -76,7 +77,7 @@ export default function SystemExtensionSection() {
                             type="button"
                             onClick={() => {
                                 setImgError(false);
-                                setPreview({ title: "広告検知・スキップ", src: "/assets/ad.png" });
+                                setPreview({ title: "広告検知・スキップ", src: `${assetBaseUrl}ad.png` });
                             }}
                             className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
                             aria-label="広告検知・スキップのプレビューを開く"
@@ -104,7 +105,7 @@ export default function SystemExtensionSection() {
                             type="button"
                             onClick={() => {
                                 setImgError(false);
-                                setPreview({ title: "状態監視", src: "/assets/stop.png" });
+                                setPreview({ title: "状態監視", src: `${assetBaseUrl}stop.png` });
                             }}
                             className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
                             aria-label="状態監視のプレビューを開く"
@@ -126,7 +127,7 @@ export default function SystemExtensionSection() {
                             type="button"
                             onClick={() => {
                                 setImgError(false);
-                                setPreview({ title: "リスト外動画の検知", src: "/assets/out-of-list.png" });
+                                setPreview({ title: "リスト外動画の検知", src: `${assetBaseUrl}out-of-list.png` });
                             }}
                             className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
                             aria-label="リスト外動画の検知のプレビューを開く"

@@ -10,6 +10,7 @@ interface PreviewState {
 export default function AllUsersSection() {
     const [preview, setPreview] = useState<PreviewState | null>(null);
     const [imgError, setImgError] = useState<boolean>(false);
+    const assetBaseUrl = `${import.meta.env.BASE_URL}assets/`;
 
     useEffect(() => {
         const onKeyDown = (event: KeyboardEvent) => {
@@ -50,7 +51,7 @@ export default function AllUsersSection() {
                             type="button"
                             onClick={() => {
                                 setImgError(false);
-                                setPreview({ title: "メタデータ自動取得", src: "/assets/metadata.png" });
+                                setPreview({ title: "メタデータ自動取得", src: `${assetBaseUrl}metadata.png` });
                             }}
                             className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
                             aria-label="メタデータ自動取得のプレビューを開く"
@@ -72,7 +73,7 @@ export default function AllUsersSection() {
                             type="button"
                             onClick={() => {
                                 setImgError(false);
-                                setPreview({ title: "重複リクエスト防止", src: "/assets/Duplication.png" });
+                                setPreview({ title: "重複リクエスト防止", src: `${assetBaseUrl}Duplication.png` });
                             }}
                             className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
                             aria-label="重複リクエスト防止のプレビューを開く"
@@ -99,7 +100,10 @@ export default function AllUsersSection() {
                             type="button"
                             onClick={() => {
                                 setImgError(false);
-                                setPreview({ title: "レート制限 (Spam Protection)", src: "/assets/rate-limited.png" });
+                                setPreview({
+                                    title: "レート制限 (Spam Protection)",
+                                    src: `${assetBaseUrl}rate-limited.png`,
+                                });
                             }}
                             className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
                             aria-label="レート制限のプレビューを開く"
@@ -121,7 +125,7 @@ export default function AllUsersSection() {
                             type="button"
                             onClick={() => {
                                 setImgError(false);
-                                setPreview({ title: "バリデーション", src: "/assets/not-found.png" });
+                                setPreview({ title: "バリデーション", src: `${assetBaseUrl}not-found.png` });
                             }}
                             className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
                             aria-label="バリデーションのプレビューを開く"
