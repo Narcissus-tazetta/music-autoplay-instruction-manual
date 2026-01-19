@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { LucideIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface MenuItem {
     id: string;
@@ -30,6 +31,13 @@ export default function MobileMenu({ isOpen, menuItems, scrollTo, activeSection 
                     className="fixed inset-0 z-30 bg-white pt-16 px-6 md:hidden overflow-y-auto"
                 >
                     <nav className="space-y-6 pb-20">
+                        <Link
+                            to="/"
+                            className="block w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-center text-sm font-medium text-slate-700"
+                        >
+                            入口へ戻る
+                        </Link>
+
                         {menuItems.map((group, idx) => (
                             <div key={idx}>
                                 <h4 className="font-bold text-lg mb-2 flex items-center">

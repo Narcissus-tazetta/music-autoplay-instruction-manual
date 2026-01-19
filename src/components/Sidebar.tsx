@@ -1,5 +1,6 @@
 import { Button } from "./ui";
 import { Music2, Info, LucideIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface MenuItem {
     id: string;
@@ -26,6 +27,15 @@ export default function Sidebar({ activeSection, scrollTo, menuItems }: SidebarP
                     <Music2 className="h-5 w-5" />
                 </div>
                 Music-AutoPlay
+            </div>
+
+            <div className="px-2 mb-6">
+                <Link
+                    to="/"
+                    className="inline-flex h-9 w-full items-center justify-center rounded-md border border-slate-200 bg-transparent px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100"
+                >
+                    入口へ戻る
+                </Link>
             </div>
 
             <div className="space-y-6">

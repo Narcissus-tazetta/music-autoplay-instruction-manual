@@ -50,10 +50,11 @@ export default function AdminSection() {
                             setImgError(false);
                             setPreview({ title: "管理者認証" });
                         }}
-                        className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
-                        aria-label="管理者認証のプレビューを開く"
+                        className="absolute right-3 top-3 inline-flex h-9 items-center gap-2 px-3 rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
+                        aria-label="画像を見る"
                     >
                         <Eye className="h-4 w-4" />
+                        <span className="text-sm">画像を見る</span>
                     </button>
                     <div className="flex items-start gap-2">
                         <Shield className="h-4 w-4 text-slate-500 mt-0.5" />

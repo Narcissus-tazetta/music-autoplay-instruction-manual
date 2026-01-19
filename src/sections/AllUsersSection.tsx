@@ -53,10 +53,11 @@ export default function AllUsersSection() {
                                 setImgError(false);
                                 setPreview({ title: "メタデータ自動取得", src: `${assetBaseUrl}metadata.png` });
                             }}
-                            className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
-                            aria-label="メタデータ自動取得のプレビューを開く"
+                            className="absolute right-3 top-3 inline-flex h-9 items-center gap-2 px-3 rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
+                            aria-label="画像を見る"
                         >
                             <Eye className="h-4 w-4" />
+                            <span className="text-sm">画像を見る</span>
                         </button>
 
                         <div className="mb-2 bg-white w-8 h-8 rounded-full flex items-center justify-center border shadow-sm">
@@ -75,10 +76,11 @@ export default function AllUsersSection() {
                                 setImgError(false);
                                 setPreview({ title: "重複リクエスト防止", src: `${assetBaseUrl}Duplication.png` });
                             }}
-                            className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
-                            aria-label="重複リクエスト防止のプレビューを開く"
+                            className="absolute right-3 top-3 inline-flex h-9 items-center gap-2 px-3 rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
+                            aria-label="画像を見る"
                         >
                             <Eye className="h-4 w-4" />
+                            <span className="text-sm">画像を見る</span>
                         </button>
 
                         <div className="mb-2 bg-white w-8 h-8 rounded-full flex items-center justify-center border shadow-sm">
@@ -105,10 +107,11 @@ export default function AllUsersSection() {
                                     src: `${assetBaseUrl}rate-limited.png`,
                                 });
                             }}
-                            className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
-                            aria-label="レート制限のプレビューを開く"
+                            className="absolute right-3 top-3 inline-flex h-9 items-center gap-2 px-3 rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
+                            aria-label="画像を見る"
                         >
                             <Eye className="h-4 w-4" />
+                            <span className="text-sm">画像を見る</span>
                         </button>
 
                         <div className="mb-2 bg-white w-8 h-8 rounded-full flex items-center justify-center border shadow-sm">
@@ -127,10 +130,11 @@ export default function AllUsersSection() {
                                 setImgError(false);
                                 setPreview({ title: "バリデーション", src: `${assetBaseUrl}not-found.png` });
                             }}
-                            className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
-                            aria-label="バリデーションのプレビューを開く"
+                            className="absolute right-3 top-3 inline-flex h-9 items-center gap-2 px-3 rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
+                            aria-label="画像を見る"
                         >
                             <Eye className="h-4 w-4" />
+                            <span className="text-sm">画像を見る</span>
                         </button>
 
                         <div className="mb-2 bg-white w-8 h-8 rounded-full flex items-center justify-center border shadow-sm">

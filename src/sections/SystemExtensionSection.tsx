@@ -55,10 +55,11 @@ export default function SystemExtensionSection() {
                                 setImgError(false);
                                 setPreview({ title: "完全自動遷移", src: `${assetBaseUrl}next-video.gif` });
                             }}
-                            className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
-                            aria-label="完全自動遷移のプレビューを開く"
+                            className="absolute right-3 top-3 inline-flex h-9 items-center gap-2 px-3 rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
+                            aria-label="画像を見る"
                         >
                             <Eye className="h-4 w-4" />
+                            <span className="text-sm">画像を見る</span>
                         </button>
 
                         <h4 className="font-medium border-b pb-2 pr-12">完全自動遷移</h4>
@@ -67,7 +68,7 @@ export default function SystemExtensionSection() {
                             <li>前のタブを自動クリーンアップ（閉じる）</li>
                             <li>再生・停止・シーク操作を全ユーザーに同期</li>
                             <li>
-                                Chromeが起動している間バックグラウンドで動作（サービスワーカーは状況により停止/再開されます）
+                                Chromeが起動している間バックグラウンドで動作（サービスワーカーとoffscreenは状況により停止/再開されます）
                             </li>
                         </ul>
                     </Card>
@@ -79,10 +80,11 @@ export default function SystemExtensionSection() {
                                 setImgError(false);
                                 setPreview({ title: "広告検知・スキップ", src: `${assetBaseUrl}ad.png` });
                             }}
-                            className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
-                            aria-label="広告検知・スキップのプレビューを開く"
+                            className="absolute right-3 top-3 inline-flex h-9 items-center gap-2 px-3 rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
+                            aria-label="画像を見る"
                         >
                             <Eye className="h-4 w-4" />
+                            <span className="text-sm">画像を見る</span>
                         </button>
 
                         <h4 className="font-medium border-b pb-2 pr-12">広告検知・スキップ</h4>
@@ -107,10 +109,11 @@ export default function SystemExtensionSection() {
                                 setImgError(false);
                                 setPreview({ title: "状態監視", src: `${assetBaseUrl}stop.png` });
                             }}
-                            className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
-                            aria-label="状態監視のプレビューを開く"
+                            className="absolute right-3 top-3 inline-flex h-9 items-center gap-2 px-3 rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
+                            aria-label="画像を見る"
                         >
                             <Eye className="h-4 w-4" />
+                            <span className="text-sm">画像を見る</span>
                         </button>
 
                         <h4 className="font-medium border-b pb-2 pr-12">状態監視</h4>
@@ -129,10 +132,11 @@ export default function SystemExtensionSection() {
                                 setImgError(false);
                                 setPreview({ title: "リスト外動画の検知", src: `${assetBaseUrl}out-of-list.png` });
                             }}
-                            className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
-                            aria-label="リスト外動画の検知のプレビューを開く"
+                            className="absolute right-3 top-3 inline-flex h-9 items-center gap-2 px-3 rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:text-slate-900"
+                            aria-label="画像を見る"
                         >
                             <Eye className="h-4 w-4" />
+                            <span className="text-sm">画像を見る</span>
                         </button>
 
                         <h4 className="font-medium border-b pb-2 pr-12">リスト外動画の検知</h4>
@@ -203,10 +207,23 @@ export default function SystemExtensionSection() {
                             データの永続化
                         </h4>
                         <p className="text-xs text-slate-600 mb-2">
-                            再生リストはJSON形式でサーバー上に保存され、再起動時やクラッシュ時でもデータは保持されます。
+                            再生リストはJSONファイル（ローカル）またはMongoDBに保存できます。環境変数で保存先を切り替えられ、
+                            開発環境はJSON、本番運用はMongoDBという使い分けができます。
                         </p>
-                        <div className="text-xs text-slate-500 bg-white p-2 rounded border">
-                            <code>data/musicRequests.json</code>
+                        <div className="text-xs text-slate-500 bg-white p-2 rounded border space-y-2">
+                            <div>
+                                <CodeBlock>data/musicRequests.json</CodeBlock>
+                                <span className="text-slate-400 ml-2">— ファイルストア（ローカル）</span>
+                            </div>
+                            <div>
+                                <CodeBlock>PERSISTENCE_PROVIDER=file</CodeBlock>
+                                <span className="text-slate-400 ml-2">— デフォルト（JSONに保存）</span>
+                            </div>
+                            <div className="text-xs text-slate-400">
+                                MongoDBに保存する場合は <CodeBlock>PERSISTENCE_PROVIDER=mongo</CodeBlock> と
+                                <CodeBlock>MONGODB_URI</CodeBlock> が必要です（任意:{" "}
+                                <CodeBlock>MONGODB_DB_NAME</CodeBlock>,<CodeBlock>MONGODB_COLLECTION</CodeBlock>）。
+                            </div>
                         </div>
                     </div>
                     <div className="border p-4 rounded-lg bg-slate-50">
