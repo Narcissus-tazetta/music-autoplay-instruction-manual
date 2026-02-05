@@ -5,9 +5,9 @@ import ContactSection from "../sections/ContactSection";
 
 export default function LandingPage() {
     const USER_DOC_URL =
-        "https://docs.google.com/presentation/d/1Vt9ZHx66nJI_hPvI5z4IuKUAJolFql2RMv0PxORGKiQ/edit?slide=id.g3b857379683_1_37#slide=id.g3b857379683_1_37";
+        "https://docs.google.com/presentation/d/1hWra1a2wz4nR_77Xm88WEFgH6a44pA2ylEF0vrAIkFc/edit?usp=sharing";
     const ADMIN_DOC_URL =
-        "https://docs.google.com/presentation/d/19OvOKzhh1jiCmWIuG01K758OjipibuQXonMmnkyPBT8/edit?slide=id.g3b8e4ac53dc_0_0#slide=id.g3b8e4ac53dc_0_0";
+        "https://docs.google.com/presentation/d/1RxfuYp7Ha9F12VKufR-qac9Jcy1WmUxfbwu1NVGqNW4/edit?usp=sharing";
 
     return (
         <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-indigo-100">
