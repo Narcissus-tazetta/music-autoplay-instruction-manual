@@ -1,6 +1,7 @@
 import { ExternalLink, FileText, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card } from "../components/ui";
+import ContactSection from "../sections/ContactSection";
 
 export default function LandingPage() {
     const USER_DOC_URL =
@@ -12,8 +13,10 @@ export default function LandingPage() {
         <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-indigo-100">
             <main className="container max-w-4xl mx-auto py-10 md:py-14 md:px-12 px-4 space-y-8">
                 <header className="space-y-3 pb-4 border-b border-slate-200">
-                    <h1 className="text-3xl font-bold tracking-tight">ドキュメント入口</h1>
-                    <p className="text-slate-600 text-sm md:text-base">対象に合わせてドキュメントを選んでください。</p>
+                    <h1 className="text-3xl font-bold tracking-tight">利用ガイド</h1>
+                    <p className="text-slate-600 text-sm md:text-base">
+                        立場や用途に合わせて、以下のドキュメントから選択してください。
+                    </p>
                     <p className="text-amber-700 text-sm">
                         ※「管理者（プログラミングわかる人向け）」は技術者向けです。
                     </p>
@@ -78,6 +81,7 @@ export default function LandingPage() {
                         </Link>
                     </Card>
                 </div>
+                <ContactSection />
             </main>
         </div>
     );
