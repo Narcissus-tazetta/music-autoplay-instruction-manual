@@ -5,6 +5,11 @@
     "typescript",
     "oxc"
   ],
+  "extends": [
+    "oxlint:recommended",
+    "plugin:unicorn/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "categories": {},
   "rules": {
     "constructor-super": "warn",
@@ -16,38 +21,38 @@
     "no-cond-assign": "warn",
     "no-const-assign": "warn",
     "no-constant-binary-expression": "warn",
-    "no-constant-condition": "warn",
+    "no-constant-condition": "error",
     "no-control-regex": "warn",
-    "no-debugger": "warn",
-    "no-delete-var": "warn",
-    "no-dupe-class-members": "warn",
+    "no-debugger": "error",
+    "no-delete-var": "error",
+    "no-dupe-class-members": "error",
     "no-dupe-else-if": "warn",
-    "no-dupe-keys": "warn",
-    "no-duplicate-case": "warn",
+    "no-dupe-keys": "error",
+    "no-duplicate-case": "error",
     "no-empty-character-class": "warn",
     "no-empty-pattern": "warn",
     "no-empty-static-block": "warn",
-    "no-eval": "warn",
+    "no-eval": "error",
     "no-ex-assign": "warn",
     "no-extra-boolean-cast": "warn",
-    "no-func-assign": "warn",
-    "no-global-assign": "warn",
-    "no-import-assign": "warn",
-    "no-invalid-regexp": "warn",
+    "no-func-assign": "error",
+    "no-global-assign": "error",
+    "no-import-assign": "error",
+    "no-invalid-regexp": "error",
     "no-irregular-whitespace": "warn",
     "no-loss-of-precision": "warn",
     "no-new-native-nonconstructor": "warn",
     "no-nonoctal-decimal-escape": "warn",
-    "no-obj-calls": "warn",
+    "no-obj-calls": "error",
     "no-self-assign": "warn",
     "no-setter-return": "warn",
-    "no-shadow-restricted-names": "warn",
+    "no-shadow-restricted-names": "error",
     "no-sparse-arrays": "warn",
-    "no-this-before-super": "warn",
+    "no-this-before-super": "error",
     "no-unassigned-vars": "warn",
-    "no-unsafe-finally": "warn",
-    "no-unsafe-negation": "warn",
-    "no-unsafe-optional-chaining": "warn",
+    "no-unsafe-finally": "error",
+    "no-unsafe-negation": "error",
+    "no-unsafe-optional-chaining": "error",
     "no-unused-expressions": "warn",
     "no-unused-labels": "warn",
     "no-unused-private-class-members": "warn",
@@ -69,11 +74,11 @@
     "oxc/const-comparisons": "warn",
     "oxc/double-comparisons": "warn",
     "oxc/erasing-op": "warn",
-    "oxc/missing-throw": "warn",
+    "oxc/missing-throw": "error",
     "oxc/number-arg-out-of-range": "warn",
     "oxc/only-used-in-recursion": "warn",
     "oxc/uninvoked-array-callback": "warn",
-    "typescript/await-thenable": "warn",
+    "typescript/await-thenable": "error",
     "typescript/no-array-delete": "warn",
     "typescript/no-base-to-string": "warn",
     "typescript/no-duplicate-enum-values": "warn",
@@ -112,6 +117,18 @@
     "unicorn/prefer-set-size": "warn",
     "unicorn/prefer-string-starts-ends-with": "warn"
   },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "no-unused-vars": "warn"
+      }
+    },
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx", "**/__tests__/**"],
+      "env": { "vitest": true }
+    }
+  ],
   "settings": {
     "jsx-a11y": {
       "polymorphicPropName": null,
@@ -141,8 +158,11 @@
     }
   },
   "env": {
+    "browser": true,
+    "node": true,
+    "es2022": true,
     "builtin": true
   },
   "globals": {},
-  "ignorePatterns": []
+  "ignorePatterns": ["node_modules/", "dist/", "build/", "public/", "coverage/", "**/*.d.ts"]
 }

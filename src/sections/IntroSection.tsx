@@ -5,8 +5,10 @@ export default function IntroSection() {
     return (
         <section id="intro" className="mb-16">
             <div className="space-y-4 mb-8">
-                <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl text-slate-900">取扱説明書</h1>
-                <p className="text-xl text-slate-500 leading-relaxed">
+                <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl text-slate-900 dark:text-slate-100">
+                    取扱説明書
+                </h1>
+                <p className="text-xl text-slate-500 dark:text-slate-400 leading-relaxed">
                     YouTube自動再生・リアルタイム同期システム「music-auto-play」の機能仕様書・マニュアル
                 </p>
             </div>

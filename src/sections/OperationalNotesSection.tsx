@@ -3,9 +3,9 @@ import { Alert, CodeBlock } from "../components/ui";
 
 export default function OperationalNotesSection() {
     return (
-        <section className="mt-16 pt-8 border-t border-slate-200">
+        <section className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-700">
             <h2 className="text-2xl font-bold tracking-tight mb-6 flex items-center gap-2">
-                <AlertTriangle className="h-6 w-6 text-amber-600" />
+                <AlertTriangle className="h-6 w-6 text-amber-600 dark:text-amber-500" />
                 運用上の注意点
             </h2>
             <div className="space-y-4">
@@ -36,7 +36,7 @@ export default function OperationalNotesSection() {
                                 <CodeBlock>ADMIN_SECRET</CodeBlock>: 管理者削除権限用のシークレット（32文字以上）
                             </li>
                         </ul>
-                        <p className="text-sm font-bold text-red-900 pt-2">
+                        <p className="text-sm font-bold text-red-900 dark:text-red-300 pt-2">
                             ⚠️
                             これらの情報は秘密鍵と同様に重要です。公開リポジトリにコミットしたり、第三者に共有しないでください。
                         </p>
@@ -66,12 +66,12 @@ export default function OperationalNotesSection() {
                 </Alert>
             </div>
 
-            <footer className="mt-24 border-t pt-8 text-center text-slate-500 text-sm">
+            <footer className="mt-24 border-t dark:border-slate-700 pt-8 text-center text-slate-500 dark:text-slate-400 text-sm">
                 <p className="flex items-center justify-center gap-4">
                     <span>&copy; Narcissus-tazetta</span>
                     <a
                         href="https://github.com/Narcissus-tazetta"
-                        className="hover:text-slate-900 flex items-center gap-1"
+                        className="hover:text-slate-900 dark:hover:text-slate-100 flex items-center gap-1"
                     >
                         GitHub <ExternalLink className="h-3 w-3" />
                     </a>

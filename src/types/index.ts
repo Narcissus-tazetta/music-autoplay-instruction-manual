@@ -10,3 +10,5 @@ export interface MenuGroup {
     icon: LucideIcon;
     items: MenuItem[];
 }
+
+export type Theme = "light" | "dark" | "system";

@@ -21,9 +21,9 @@ interface SidebarProps {
 
 export default function Sidebar({ activeSection, scrollTo, menuItems }: SidebarProps) {
     return (
-        <aside className="hidden md:block w-64 border-r border-slate-200 h-[calc(100vh)] sticky top-0 py-8 pr-6 overflow-y-auto">
-            <div className="font-bold text-xl flex items-center gap-2 mb-8 px-2 text-slate-900">
-                <div className="h-8 w-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white">
+        <aside className="hidden md:block w-64 border-r border-slate-200 dark:border-slate-700 h-[calc(100vh)] sticky top-0 py-8 pr-6 overflow-y-auto dark:bg-slate-900">
+            <div className="font-bold text-xl flex items-center gap-2 mb-8 px-2 text-slate-900 dark:text-slate-100">
+                <div className="h-8 w-8 bg-indigo-600 dark:bg-indigo-500 rounded-lg flex items-center justify-center text-white">
                     <Music2 className="h-5 w-5" />
                 </div>
                 Music-AutoPlay
@@ -32,7 +32,7 @@ export default function Sidebar({ activeSection, scrollTo, menuItems }: SidebarP
             <div className="px-2 mb-6">
                 <Link
                     to="/"
-                    className="inline-flex h-9 w-full items-center justify-center rounded-md border border-slate-200 bg-transparent px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100"
+                    className="inline-flex h-9 w-full items-center justify-center rounded-md border border-slate-200 dark:border-slate-700 bg-transparent px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 transition-colors hover:bg-slate-100 dark:hover:bg-slate-800"
                 >
                     入口へ戻る
                 </Link>
@@ -51,11 +51,11 @@ export default function Sidebar({ activeSection, scrollTo, menuItems }: SidebarP
 
                 {menuItems.map((group, idx) => (
                     <div key={idx} className="space-y-2">
-                        <h4 className="flex items-center px-2 text-sm font-semibold text-slate-900">
-                            <group.icon className="mr-2 h-4 w-4 text-slate-500" />
+                        <h4 className="flex items-center px-2 text-sm font-semibold text-slate-900 dark:text-slate-100">
+                            <group.icon className="mr-2 h-4 w-4 text-slate-500 dark:text-slate-400" />
                             {group.title}
                         </h4>
-                        <div className="grid grid-flow-row auto-rows-max text-sm pl-4 border-l border-slate-200 ml-2">
+                        <div className="grid grid-flow-row auto-rows-max text-sm pl-4 border-l border-slate-200 dark:border-slate-700 ml-2">
                             {group.items.map((item) => (
                                 <button
                                     key={item.id}
@@ -63,8 +63,8 @@ export default function Sidebar({ activeSection, scrollTo, menuItems }: SidebarP
                                     aria-current={activeSection === item.id ? "true" : undefined}
                                     className={`group flex w-full items-center rounded-md px-2 py-1.5 transition-colors ${
                                         activeSection === item.id
-                                            ? "font-medium text-indigo-700 bg-indigo-50 hover:bg-indigo-100"
-                                            : "text-slate-500 hover:text-slate-900 hover:bg-slate-50"
+                                            ? "font-medium text-indigo-700 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 hover:bg-indigo-100 dark:hover:bg-indigo-900/40"
+                                            : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
                                     }`}
                                 >
                                     {item.label}

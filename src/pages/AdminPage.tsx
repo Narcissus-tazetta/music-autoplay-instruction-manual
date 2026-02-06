@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 import { Menu, X, Music, Users, UserCheck, Crown, Puzzle, Settings } from "lucide-react";
 import Sidebar from "../components/Sidebar";
 import MobileMenu from "../components/MobileMenu";
+import SettingsButton from "../components/SettingsButton";
 import { Button } from "../components/ui";
 import { MenuGroup } from "../types";
-
-// Section components
 import IntroSection from "../sections/IntroSection";
 import AllUsersSection from "../sections/AllUsersSection";
 import LoggedInUsersSection from "../sections/LoggedInUsersSection";
@@ -18,7 +17,6 @@ export default function AdminPage() {
     const [activeSection, setActiveSection] = useState<string>("intro");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-    // Scroll Spy Logic
     useEffect(() => {
         const handleScroll = () => {
             const sections = [
@@ -100,9 +98,8 @@ export default function AdminPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-indigo-100">
-            {/* Header (Mobile) */}
-            <header className="sticky top-0 z-40 w-full border-b bg-white/95 backdrop-blur md:hidden">
+        <div className="min-h-screen bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans selection:bg-indigo-100 dark:selection:bg-indigo-900">
+            <header className="sticky top-0 z-40 w-full border-b bg-white/95 dark:bg-slate-900/95 backdrop-blur md:hidden dark:border-slate-700">
                 <div className="flex h-14 items-center px-4 justify-between">
                     <div className="flex items-center">
                         <Button
@@ -114,26 +111,27 @@ export default function AdminPage() {
                             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                         </Button>
                         <div className="font-bold flex items-center gap-2">
-                            <Music className="h-5 w-5 text-indigo-600" />
+                            <Music className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
                             <span>MusicAutoPlay</span>
                         </div>
                     </div>
+                    <SettingsButton />
                 </div>
             </header>
 
             <div className="flex container max-w-7xl mx-auto">
                 <Sidebar activeSection={activeSection} scrollTo={scrollTo} menuItems={menuItems} />
-
-                {/* Mobile Menu Overlay */}
                 <MobileMenu
                     isOpen={isMobileMenuOpen}
                     menuItems={menuItems}
                     scrollTo={scrollTo}
                     activeSection={activeSection}
                 />
+                <main className="flex-1 py-8 md:px-12 px-4 max-w-4xl pb-32 relative">
+                    <div className="hidden md:block fixed top-8 right-8 z-50">
+                        <SettingsButton />
+                    </div>
 
-                {/* Main Content */}
-                <main className="flex-1 py-8 md:px-12 px-4 max-w-4xl pb-32">
                     <IntroSection />
 
                     <div className="space-y-16">

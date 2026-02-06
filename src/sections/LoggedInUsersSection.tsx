@@ -4,8 +4,8 @@ import { Card } from "../components/ui";
 export default function LoggedInUsersSection() {
     return (
         <section className="space-y-8 pt-8">
-            <div className="flex items-center gap-3 pb-2 border-b border-slate-200">
-                <div className="p-2 bg-blue-100 text-blue-700 rounded-lg">
+            <div className="flex items-center gap-3 pb-2 border-b border-slate-200 dark:border-slate-700">
+                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-lg">
                     <UserCheck className="h-6 w-6" />
                 </div>
                 <h2 className="text-3xl font-bold tracking-tight">ログインユーザー限定機能</h2>
@@ -13,12 +13,12 @@ export default function LoggedInUsersSection() {
 
             <div id="login-auth" className="scroll-mt-24 space-y-4">
                 <h3 className="text-xl font-semibold flex items-center gap-2">
-                    <UserCheck className="h-5 w-5 text-slate-500" />
+                    <UserCheck className="h-5 w-5 text-slate-500 dark:text-slate-400" />
                     ログイン方法
                 </h3>
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-5 space-y-3">
+                <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-5 space-y-3">
                     <div className="flex items-start gap-3">
-                        <div className="p-2 bg-white rounded-full shadow-sm">
+                        <div className="p-2 bg-white dark:bg-slate-800 rounded-full shadow-sm">
                             <svg className="h-5 w-5" viewBox="0 0 24 24">
                                 <path
                                     fill="#4285F4"
@@ -39,14 +39,14 @@ export default function LoggedInUsersSection() {
                             </svg>
                         </div>
                         <div className="flex-1">
-                            <h4 className="font-bold text-blue-900 mb-1">Google OAuth 2.0</h4>
-                            <p className="text-sm text-blue-800 leading-relaxed">
+                            <h4 className="font-bold text-blue-900 dark:text-blue-300 mb-1">Google OAuth 2.0</h4>
+                            <p className="text-sm text-blue-800 dark:text-blue-300 leading-relaxed">
                                 Googleアカウントで安全にログインできます。
                                 メールアドレスが確認済みのアカウントのみが利用可能です。
                             </p>
                         </div>
                     </div>
-                    <div className="bg-white rounded p-3 text-xs text-slate-600">
+                    <div className="bg-white dark:bg-slate-800 rounded p-3 text-xs text-slate-600 dark:text-slate-400">
                         <p className="font-medium mb-1">認証フロー</p>
                         <ol className="list-decimal pl-4 space-y-1">
                             <li>「ログイン」ボタンをクリック</li>
@@ -60,20 +60,22 @@ export default function LoggedInUsersSection() {
 
             <div id="login-delete" className="scroll-mt-24 space-y-4">
                 <h3 className="text-xl font-semibold flex items-center gap-2">
-                    <Trash2 className="h-5 w-5 text-slate-500" />
+                    <Trash2 className="h-5 w-5 text-slate-500 dark:text-slate-400" />
                     自分のリクエスト削除
                 </h3>
 
-                <p className="text-slate-600 mb-2">ログイン中のユーザーは、以下の権限を持ちます。</p>
+                <p className="text-slate-600 dark:text-slate-400 mb-2">
+                    ログイン中のユーザーは、以下の権限を持ちます。
+                </p>
 
-                <Card className="p-6 border-blue-200 bg-blue-50/50">
+                <Card className="p-6 border-blue-200 dark:border-blue-800 bg-blue-50/50 dark:bg-blue-900/20">
                     <div className="flex flex-col gap-4">
                         <div>
-                            <h4 className="font-bold text-blue-900 mb-2 flex items-center gap-2">
+                            <h4 className="font-bold text-blue-900 dark:text-blue-300 mb-2 flex items-center gap-2">
                                 <CheckCircle2 className="h-4 w-4" />
                                 自己管理権限
                             </h4>
-                            <p className="text-sm text-blue-800">
+                            <p className="text-sm text-blue-800 dark:text-blue-300">
                                 自分が追加した楽曲に限り、再生が始まる前であればリストから削除（キャンセル）できます。
                                 <br />
                                 <span className="text-xs opacity-80 mt-1 block">
@@ -82,12 +84,12 @@ export default function LoggedInUsersSection() {
                             </p>
                         </div>
 
-                        <div className="bg-white p-4 rounded-lg border border-blue-100 shadow-sm">
-                            <h5 className="font-bold text-slate-800 text-sm mb-2 flex items-center gap-2">
-                                <AlertTriangle className="h-4 w-4 text-amber-500" />
+                        <div className="bg-white dark:bg-slate-800 p-4 rounded-lg border border-blue-100 dark:border-blue-800 shadow-sm">
+                            <h5 className="font-bold text-slate-800 dark:text-slate-200 text-sm mb-2 flex items-center gap-2">
+                                <AlertTriangle className="h-4 w-4 text-amber-500 dark:text-amber-400" />
                                 仕様の注意点：ゲストユーザー
                             </h5>
-                            <p className="text-sm text-slate-600 leading-relaxed">
+                            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                 ログインせずに（ゲストとして）追加した楽曲は、
                                 <span className="font-bold text-red-600 underline decoration-red-200 underline-offset-4 mx-1">
                                     たとえ本人であっても後から削除できません。
