@@ -21,14 +21,14 @@ export default function ContactSection() {
                             <div>
                                 <div className="font-semibold">メール</div>
                                 <div className="text-xs text-slate-500 dark:text-slate-400">
-                                    akira_23s1101758@nnn.ed.jp
+                                    Ibaragiakira2007@gmail.com
                                 </div>
                             </div>
                         </div>
                         <a
-                            href="mailto:akira_23s1101758@nnn.ed.jp"
+                            href="mailto:Ibaragiakira2007@gmail.com"
                             className="text-xs text-slate-500 dark:text-slate-400"
-                            aria-label="メールを開く（akira_23s1101758@nnn.ed.jp）"
+                            aria-label="メールを開く（Ibaragiakira2007@gmail.com）"
                         >
                             開く
                         </a>
