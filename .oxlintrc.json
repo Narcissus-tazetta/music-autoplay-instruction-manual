@@ -5,12 +5,7 @@
     "typescript",
     "oxc"
   ],
-  "extends": [
-    "oxlint:recommended",
-    "plugin:unicorn/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "categories": {},
+  "categories": { "correctness": "warn" },
   "rules": {
     "constructor-super": "warn",
     "for-direction": "warn",

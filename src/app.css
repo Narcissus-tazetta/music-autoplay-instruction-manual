@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Keep the page background on <html> so overscroll never reveals a mismatched colour. */
+html {
+    color-scheme: light;
+    background-color: var(--color-white);
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+html.dark {
+    color-scheme: dark;
+    background-color: var(--color-slate-950);
+}
+
+::selection {
+    background-color: color-mix(in srgb, var(--color-indigo-200) 70%, transparent);
+}
+.dark ::selection {
+    background-color: color-mix(in srgb, var(--color-indigo-800) 70%, transparent);
+}
